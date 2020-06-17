@@ -19,6 +19,7 @@ namespace MovieLibrary.Controllers
             _logger = logger;
         }
 
+        /*Controller actions are invoked in response to an incoming URL request. A controller class is where the code is written that handles the incoming browser requests. A best practice: View templates should not perform business logic or interact with a database directly. Rather, a view template should work only with the data that's provided to it by the controller. Maintaining this "separation of concerns" helps keep the code clean, testable, and maintainable.*/
         public IActionResult Index()
         {
             return View();

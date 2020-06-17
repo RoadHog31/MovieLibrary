@@ -24,10 +24,17 @@ namespace MovieLibrary.Controllers
         // 
         // GET: /HelloWorld/Welcome/ 
         /*Uses the C# optional-parameter feature to indicate that the numTimes parameter defaults to 1 if no value is passed for that parameter. */
-        public string Welcome(string name, int ID = 1)
+        public IActionResult Welcome(string name, int numTimes = 1)
         {
             //Uses HtmlEncoder.Default.Encode to protect the app from malicious input (namely JavaScript). Also, uses Interpolated Strings.
-            return HtmlEncoder.Default.Encode($"Hello {name}, ID: { ID}");
+            //return HtmlEncoder.Default.Encode($"Hello {name}, ID: { ID}");
+
+
+            /*The controller packages the data into a ViewData dictionary and passes that object to the view. The view then renders the data as HTML to the browser.*/
+            ViewData["Message"] = "Hello" + " " + name;
+            ViewData["NumTimes"] = numTimes;
+
+            return View();
         }
     }
 }
