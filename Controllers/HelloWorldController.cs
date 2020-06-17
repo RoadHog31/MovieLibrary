@@ -15,9 +15,10 @@ namespace MovieLibrary.Controllers
         // 
         // GET: /HelloWorld/
 
-        public string Index()
+        public IActionResult Index()
         {
-            return "This is my default action...";
+            //Controller methods (also known as action methods), such as the Index method below, generally return an IActionResult (or a class derived from ActionResult), not a type like string.
+            return View();
         }
 
         // 
