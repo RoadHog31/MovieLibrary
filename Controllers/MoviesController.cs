@@ -11,6 +11,7 @@ namespace MovieLibrary.Controllers
     {
         private readonly ApplicationDbContext _context;
 
+        /*The constructor uses Dependency Injection to inject the database context (MvcMovieContext) into the controller. The database context is used in each of the CRUD methods in the controller.*/
         public MoviesController(ApplicationDbContext context)
         {
             _context = context;
