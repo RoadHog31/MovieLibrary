@@ -28,4 +28,22 @@ Add SQL Server database - read data and Create, Read, Update and Delete CRUD Fun
 
 Add IMDB Web Api data from endpoint and return to View. 
 
+Maybe Add a Movie rental System/Functionality:
+
+Its like a thing of the past now - a Movie Rental system.
+
+Model:
+- a movie database
+- customer database
+
+Controller:
+- Check-In / Out
+- Search
+
+View:
+- various screens / facets of your dataset
+
+I suppose if you wanted to modernize it you could think about how this might be modified to deliver content over the web and/or via a subscription model.rental project:
+
+
 
