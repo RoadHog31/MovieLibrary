@@ -43,7 +43,7 @@ Controller:
 View:
 - various screens / facets of your dataset
 
-I suppose if you wanted to modernize it you could think about how this might be modified to deliver content over the web and/or via a subscription model.rental project:
+I guess to modernize it I could think about how this might be modified to deliver content over the web and/or via a subscription model.rental project?
 
 
 
