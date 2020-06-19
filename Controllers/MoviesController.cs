@@ -11,7 +11,7 @@ namespace MovieLibrary.Controllers
     {
         private readonly ApplicationDbContext _context;
 
-        /*The constructor uses Dependency Injection to inject the database context (MvcMovieContext) into the controller. The database context is used in each of the CRUD methods in the controller.*/
+        /*The constructor uses Dependency Injection to inject the database context (ApplicationDbContext) into the controller. The database context is used in each of the CRUD methods in the controller.*/
         public MoviesController(ApplicationDbContext context)
         {
             _context = context;
@@ -26,18 +26,22 @@ namespace MovieLibrary.Controllers
         // GET: Movies/Details/5
         public async Task<IActionResult> Details(int? id)
         {
+            //The id parameter is generally passed as route data via URL as Controller/Action/Id. You can also pass in the id with a query string as key/value pair and nuallable type ?id=1. Incase no Id provided. 
             if (id == null)
             {
                 return NotFound();
             }
 
+            /*A lambda expression is passed in to FirstOrDefaultAsync to select movie entities that match the route data or query string value.*/
             var movie = await _context.Movie
                 .FirstOrDefaultAsync(m => m.Id == id);
+
             if (movie == null)
             {
                 return NotFound();
             }
 
+            //If a movie is found, an instance of the Movie model is passed to the Details view:
             return View(movie);
         }
 
